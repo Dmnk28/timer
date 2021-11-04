@@ -1,0 +1,36 @@
+@import '_colors';
+
+
+@mixin glass-element {
+    background: rgba(#fff, 0.45);
+    box-shadow: 0 8px 32px 0 rgba($darkblue, 0.37);
+    backdrop-filter: blur( 11px );
+    border-radius: 10px;
+    border: 1px solid rgba(#fff, 0.18);
+}
+
+/// Elements, Ids, Classes //
+
+body {
+    min-height: 100vh;
+}
+
+.App {
+    min-height: 100vh;
+    background: linear-gradient(70deg, $darkgold, $blue);
+}
+
+#timer-container{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #timer {
+        padding: 3rem 2rem;
+        min-width: 40vw;
+        @include glass-element();
+    }
+
+}
+
