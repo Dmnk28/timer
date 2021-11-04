@@ -17,7 +17,8 @@ body {
 
 .App {
     min-height: 100vh;
-    background: linear-gradient(70deg, $darkgold, $blue);
+    background: url('../assets/polygon-scatter-haikei.svg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 #timer-container{

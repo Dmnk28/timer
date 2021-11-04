@@ -4,7 +4,8 @@ body {
 
 .App {
   min-height: 100vh;
-  background: linear-gradient(70deg, #D97904, #03A6A6);
+  background: url("../assets/polygon-scatter-haikei.svg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 #timer-container {
@@ -24,8 +25,8 @@ body {
   padding: 3rem 2rem;
   min-width: 40vw;
   background: rgba(255, 255, 255, 0.45);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(42, 71, 89, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(42, 71, 89, 0.37);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(32, 54, 68, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(32, 54, 68, 0.37);
   -webkit-backdrop-filter: blur(11px);
           backdrop-filter: blur(11px);
   border-radius: 10px;
