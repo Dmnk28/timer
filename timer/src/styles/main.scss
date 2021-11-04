@@ -1,15 +1,7 @@
-@import '_colors';
+// @import '_colors';       // Already imported in _mixins. 
 
-
-@mixin glass-element {
-    background: rgba(#fff, 0.45);
-    box-shadow: 0 8px 32px 0 rgba($darkblue, 0.37);
-    backdrop-filter: blur( 11px );
-    border-radius: 10px;
-    border: 1px solid rgba(#fff, 0.18);
-}
-
-/// Elements, Ids, Classes //
+@import '_mixins';
+/* Elements, Ids, Classes */
 
 body {
     min-height: 100vh;

@@ -59,6 +59,12 @@ const ProjectBar = (props) => {
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: 300,
+                        background: 'rgba(255,255,255, 0.75)',
+                        boxShadow: '0 8px 32px 0 rgba(32,54,68, 0.57)',
+                        webkitBackdropFilter: 'blur( 5px)',
+                        backdropFilter: 'blur( 5px )',
+                        borderRadius: '0 10px 10px 0',
+                        border: '1px solid rgba(255,255,255,0.28)',
                         boxSizing: 'border-box',
                     },
                 }}

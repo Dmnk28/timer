@@ -1,0 +1,10 @@
+@import '_colors';
+
+@mixin glass-element {
+    background: rgba($lightbgr, 0.45);
+    box-shadow: 0 8px 32px 0 rgba($darkblue, 0.37);
+    -webkit-backdrop-filter: blur( 2px );
+    backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba($lightbgr, 0.18);
+}
