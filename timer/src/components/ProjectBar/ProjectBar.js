@@ -144,12 +144,12 @@ const ProjectBar = (props) => {
                         </ListItem>
                     </Link>
 
-                    <Link className="pbar-link" href="https://do-webdev.de" target="_self">
+                    {/*<Link className="pbar-link" href="https://do-webdev.de" target="_self">*/}
                         <ListItem button key="portfolio" disabled>
                             <ListItemIcon><ArrowBackIcon /></ListItemIcon>
                             <ListItemText primary="Back to my portfolio"></ListItemText>
                         </ListItem>
-                    </Link>
+                    {/*</Link>*/}
                 </List>
             </SwipeableDrawer>
         </React.Fragment>
