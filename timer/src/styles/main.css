@@ -23,8 +23,8 @@ body {
 }
 
 #timer-container #timer {
-  padding: 3rem 2rem;
-  min-width: 40vw;
+  padding: 4rem;
+  min-width: 30vw;
   background: rgba(255, 255, 255, 0.45);
   -webkit-box-shadow: 0 8px 32px 0 rgba(32, 54, 68, 0.37);
           box-shadow: 0 8px 32px 0 rgba(32, 54, 68, 0.37);
@@ -32,5 +32,28 @@ body {
   backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#timer-container #timer .time-adjust {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#timer-container #timer #time-container {
+  margin-top: 2rem;
+  text-align: center;
+  background: linear-gradient(70deg, #D97904, #203644);
+  color: #fff;
+  border-radius: 10px;
+}
+
+#timer-container #timer #time-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */
