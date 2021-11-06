@@ -3,16 +3,20 @@ import { Divider, SwipeableDrawer, IconButton, Link, List, ListItem, ListItemIco
 //import { marked } from 'marked';      // Wait untill 4.0.0 ist bugfree!
 //import DOMPurify from 'dompurify';
 
-// Icons
+// Material Icons
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import CloseIcon from '@mui/icons-material/Close';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import HomeIcon from '@mui/icons-material/Home';
+import EmailIcon from '@mui/icons-material/Email';
+// FontAwesome Icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFreeCodeCamp} from '@fortawesome/free-brands-svg-icons/faFreeCodeCamp';
 import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {faAlignLeft} from '@fortawesome/free-solid-svg-icons/faAlignLeft';
-import CloseIcon from '@mui/icons-material/Close';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 // Styles
 import './styles/projectbar.css'
@@ -133,6 +137,13 @@ const ProjectBar = (props) => {
                             <ListItemText primary="Inspect the Code"></ListItemText>
                         </ListItem>
                     </Link>
+
+                    <Link className="pbar-link" href="mailto:dominik.oesterle@posteo.de">
+                        <ListItem button key="repository">
+                            <ListItemIcon><EmailIcon /></ListItemIcon>
+                            <ListItemText primary="Report a Bug"></ListItemText>
+                        </ListItem>
+                    </Link>
                     
                     <Divider />
                     
@@ -149,13 +160,30 @@ const ProjectBar = (props) => {
                             <ListItemText primary="LinkedIn Profile"></ListItemText>
                         </ListItem>
                     </Link>
+                    
+                    <Divider />
+
+                    {/* <Link className="pbar-link" href={props.next} target="_self">
+                        <ListItem button key="portfolio" disabled>
+                            <ListItemIcon><ArrowForwardIcon /></ListItemIcon>
+                            <ListItemText primary="Next FCC Project"></ListItemText>
+                        </ListItem>
+                    </Link>
+                     */}
+                    <Link className="pbar-link" href={props.previus} target="_self">
+                        <ListItem button key="portfolio">
+                            <ListItemIcon><ArrowBackIcon /></ListItemIcon>
+                            <ListItemText primary="Previous FCC Project"></ListItemText>
+                        </ListItem>
+                    </Link>
 
                     {/*<Link className="pbar-link" href="https://do-webdev.de" target="_self">*/}
-                        <ListItem button key="portfolio" disabled>
-                            <ListItemIcon><ArrowBackIcon /></ListItemIcon>
-                            <ListItemText primary="Back to my portfolio"></ListItemText>
+                    <ListItem button key="portfolio" disabled>
+                            <ListItemIcon><HomeIcon /></ListItemIcon>
+                            <ListItemText primary="Portfolio"></ListItemText>
                         </ListItem>
                     {/*</Link>*/}
+
                 </List>
             </SwipeableDrawer>
         </React.Fragment>
