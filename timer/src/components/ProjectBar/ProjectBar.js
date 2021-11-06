@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Divider, SwipeableDrawer, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
-//import { marked } from 'marked';      // Wait untill 4.0.0 ist bugfree!
-//import DOMPurify from 'dompurify';
+import marked from 'marked';      // Wait untill 4.0.0 ist bugfree!
+import DOMPurify from 'dompurify';
 
 // Material Icons
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -22,7 +22,7 @@ import {faAlignLeft} from '@fortawesome/free-solid-svg-icons/faAlignLeft';
 import './styles/projectbar.css'
 
 // Data
-// import readme_copy from './_readme_copy'
+import readme_copy from './_readme_copy'
 
 const ProjectBar = (props) => {
     const [drawerState, setDrawerState] = useState(false);
@@ -47,9 +47,8 @@ const ProjectBar = (props) => {
     const readmePopover = readmeOpen ? 'readme-popover' : undefined;
 
     const loadReadme = () => {
-        // let dirtyHTML = marked('# readme_copy');
-        // return marked.parse('# readme_copy');    // Testreturn
-        //return(DOMPurify.sanitize(marked(readme_copy), {USE_PROFILES: {html:true}}));
+        let dirtyHTML = marked.parse(readme_copy);
+        return(DOMPurify.sanitize(dirtyHTML, {USE_PROFILES: {html:true}}));
     }
 
     return (
