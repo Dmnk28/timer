@@ -50,7 +50,6 @@ class Timer extends React.Component {
             this.setState({
                 timeTitle: "Break",
                 sessionCount: this.state.sessionCount + 1,
-                timerRunning: false
             });
             this.calcDuration(this.state.breakLength);
             this.startTimer();
@@ -60,7 +59,6 @@ class Timer extends React.Component {
             this.setState({
                 timeTitle: "Session",
                 breakCount: this.state.breakCount + 1,
-                timerRunning: false
             });
             this.calcDuration(this.state.sessionLength);
             this.startTimer();
@@ -155,7 +153,7 @@ class Timer extends React.Component {
                     <div id="timer">
                         <Typography variant="h3" component="h1">Session-Timer</Typography>
                     
-                        <Grid container spacing={3}>
+                        <Grid container spacing={3} pt={3}>
                             <Grid item xs={6}>
                                 <Typography variant="h5" component="h2" id="session-label">Session-Length</Typography>
                             </Grid>    
@@ -188,8 +186,7 @@ class Timer extends React.Component {
                         </div>
                     
                         <Container id="time-controls">
-                            <IconButton size="large"><PauseIcon fontSize="inherit"/></IconButton>
-                            <IconButton size="large" id="start_stop" onClick={this.handlePlayBtn}><PlayArrowIcon fontSize="inherit"/></IconButton>
+                            <IconButton size="large" id="start_stop" onClick={this.handlePlayBtn}>{this.state.timerRunning ? <PauseIcon fontSize="inherit"/> : <PlayArrowIcon fontSize="inherit"/>}</IconButton>
                             <IconButton size="large" id="reset" onClick={this.handleReset}><ReplayIcon fontSize="inherit"/></IconButton>
                         </Container>
 
