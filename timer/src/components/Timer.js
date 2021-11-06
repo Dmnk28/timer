@@ -44,11 +44,13 @@ class Timer extends React.Component {
     }
 
     timerControl = () => {
+        if (this.state.time === 0) this.beepSound();
         if (this.state.time < 0 && this.state.timer && this.state.timeTitle === "Session") {
             this.state.timer.clear();
             this.setState({
                 timeTitle: "Break",
-                sessionCount: this.state.sessionCount + 1
+                sessionCount: this.state.sessionCount + 1,
+                timerRunning: false
             });
             this.calcDuration(this.state.breakLength);
             this.startTimer();
@@ -57,7 +59,8 @@ class Timer extends React.Component {
             this.state.timer.clear();
             this.setState({
                 timeTitle: "Session",
-                breakCount: this.state.breakCount + 1
+                breakCount: this.state.breakCount + 1,
+                timerRunning: false
             });
             this.calcDuration(this.state.sessionLength);
             this.startTimer();
@@ -71,10 +74,22 @@ class Timer extends React.Component {
         });
     }
 
+    beepSound = (optional) =>{
+        const audio = document.getElementById('beep');
+        audio.currentTime = 0;
+        if (optional) {
+            audio.pause();
+            return;
+        }
+        audio.play();
+    }
+
     secsToClock = () => {
-        const mins = Math.floor(this.state.time / 60);
-        const secs = this.state.time - mins * 60;
-        return `${(mins < 10) ? '0' + mins : mins}:${(secs < 10)? '0' + secs : secs}`;
+        let mins = Math.floor(this.state.time / 60);
+        let secs = this.state.time - mins * 60;
+        mins = (mins < 10) ? '0' + mins : mins;
+        secs = (secs < 10)? '0' + secs : secs;
+        return mins + ":" + secs;
     }
 
     ////////////////////////////
@@ -106,6 +121,7 @@ class Timer extends React.Component {
             timer: "",
             timerRunning: false 
         });
+        this.beepSound('pause');
     }
 
     handleDurationButtons = (event) => {
@@ -168,7 +184,7 @@ class Timer extends React.Component {
 
                         <div id="time-container">
                             <Typography variant="h5" component="h2" pt={3} pb={0} id="timer-label">{this.state.timeTitle}</Typography>
-                            <Typography variant="h2" pt={1} id="time-left">{this.secsToClock(this.state.time)}</Typography>
+                            <Typography variant="h2" pt={1} id="time-left">{this.secsToClock()}</Typography>
                         </div>
                     
                         <Container id="time-controls">
@@ -179,6 +195,7 @@ class Timer extends React.Component {
 
                     </div>
                 </div>
+                <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
             </React.Fragment>
         
         )
