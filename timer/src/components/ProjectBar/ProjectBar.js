@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Divider, SwipeableDrawer, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
-import marked from 'marked';      // Wait untill 4.0.0 ist bugfree!
+import marked from 'marked';      
 import DOMPurify from 'dompurify';
 
 // Material Icons
@@ -169,7 +169,7 @@ const ProjectBar = (props) => {
                         </ListItem>
                     </Link>
                      */}
-                    <Link className="pbar-link" href={props.previus} target="_self">
+                    <Link className="pbar-link" href={props.previous} target="_self">
                         <ListItem button key="portfolio">
                             <ListItemIcon><ArrowBackIcon /></ListItemIcon>
                             <ListItemText primary="Previous FCC Project"></ListItemText>

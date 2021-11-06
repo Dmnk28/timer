@@ -20,7 +20,6 @@ const App = () => {
           readme      =   'https://github.com/Dmnk28/timer/blob/main/README.md'
           next        =   ''
           previous    =   'https://do-webdev.de/projects/calculator'
-          
       />
       <Timer />
     </ThemeProvider>
