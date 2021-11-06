@@ -5,12 +5,13 @@
 
 body {
     min-height: 100vh;
+    background: url('../assets/polygon-scatter-haikei.svg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
 }
 
 .App {
     min-height: 100vh;
-    background: url('../assets/polygon-scatter-haikei.svg') no-repeat center center fixed;
-    background-size: cover;
 }
 
 #timer-container{
@@ -26,6 +27,8 @@ body {
 
         .time-adjust {
             display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
 
         #time-container {

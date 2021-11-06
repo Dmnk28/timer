@@ -1,12 +1,13 @@
 /* Elements, Ids, Classes */
 body {
   min-height: 100vh;
+  background: url("../assets/polygon-scatter-haikei.svg") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
 }
 
 .App {
   min-height: 100vh;
-  background: url("../assets/polygon-scatter-haikei.svg") no-repeat center center fixed;
-  background-size: cover;
 }
 
 #timer-container {
@@ -38,6 +39,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #timer-container #timer #time-container {
