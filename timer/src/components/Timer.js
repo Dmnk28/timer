@@ -85,7 +85,9 @@ class Timer extends React.Component {
     secsToClock = () => {
         let mins = Math.floor(this.state.time / 60);
         let secs = this.state.time - mins * 60;
-        return `${(mins < 10) ? '0' + mins : mins} : ${(secs < 10)? '0' + secs : secs}`;
+        mins = (mins < 10) ? '0' + mins : mins;
+        secs = (secs < 10) ? '0' + secs : secs;
+        return mins + ":" + secs;
     }
 
     ////////////////////////////
