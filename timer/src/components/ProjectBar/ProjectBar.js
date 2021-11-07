@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Divider, SwipeableDrawer, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
+import { Divider, Drawer, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
 import marked from 'marked';      
 import DOMPurify from 'dompurify';
 
@@ -56,7 +56,7 @@ const ProjectBar = (props) => {
             <div id="button-div">
                 <IconButton color='primary' onClick={toggleDrawer(true)}><DoubleArrowIcon></DoubleArrowIcon></IconButton>
             </div>
-            <SwipeableDrawer 
+            <Drawer 
                 sx  = {{
                     width: 300,
                     flexShrink: 0,
@@ -184,7 +184,7 @@ const ProjectBar = (props) => {
                     {/*</Link>*/}
 
                 </List>
-            </SwipeableDrawer>
+            </Drawer>
         </React.Fragment>
     );
 
